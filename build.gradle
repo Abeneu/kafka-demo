@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+apply plugin: 'idea'
+apply plugin: 'groovy'
+apply plugin: 'application'
+mainClassName = 'com.objectpartners.spark.rt911.standalone.MainApplication'
+
+
+group = 'com.objectpartners'
+version = '0.1'
+
+description = """
+Spark Java Stand Alone Examples
+Project name: ${project.name}
+ """
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+    maven {
+        url "http://repo.maven.apache.org/maven2"
+    }
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy:2.4.7'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'
+    compile group: 'org.springframework', name: 'spring-expression', version: '4.3.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context-support', version: '4.3.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-beans', version: '4.3.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context', version: '4.3.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-core', version: '4.3.3.RELEASE'
+    compile group: 'org.apache.kafka', name: 'kafka-clients', version: '0.10.0.1'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
+}
+
+
+
