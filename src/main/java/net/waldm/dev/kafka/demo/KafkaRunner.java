@@ -19,7 +19,7 @@ public class KafkaRunner {
     Consumer consumer;
 
     public void runDemo() {
-        logger.info("this demo requires ZooKeeper and Kafka to be up and running\n" +
+        logger.info("this demo requires ZooKeeper and Kafka to be up and running " +
                     "and the topic " + KafakConfig.TOPIC + " must be available");
 
         Thread producerThread = new Thread(producer);
@@ -34,19 +34,11 @@ public class KafkaRunner {
             Thread.sleep(10000);
             logger.info("sleep complete");
         } catch (InterruptedException e) {
-            logger.info("wake up, time to finish up");
+            logger.info(e.getMessage());
         } finally {
-            logger.info("stopping consumer");
             consumer.stop();
         }
-        logger.info("demo run completed");
+        logger.info("demo run completed\n");
     }
-
-    public String testMe() {
-        logger.info("producer = " + producer.toString());
-        logger.info("consumer = " + consumer.toString());
-        return "yes boss!";
-    }
-
 
 }

@@ -18,6 +18,6 @@ public class KafkaMain {
         logger.info("Spring context initialized.");
 
         KafkaRunner runner = (KafkaRunner) ctx.getBean("kafkaRunner");
-        logger.info("runner says ='" + runner.testMe() + "'");
+        runner.runDemo();
     }
 }

@@ -29,14 +29,15 @@ class Consumer implements Runnable {
             while (running) {
                 ConsumerRecords<String, String> records = kafkaConsumer.poll(1000);
                 for (ConsumerRecord<String, String> record : records)
-                    logger.info(record.offset() + ": " + record.value());
+                    logger.info("received: record = " + record.offset() + " value = " + record.value());
             }
         } finally {
             kafkaConsumer.close();
         }
     }
 
-    public void stop() {
+    void stop() {
+        logger.info("=== stopping consumer ===");
         running = false;
     }
 }

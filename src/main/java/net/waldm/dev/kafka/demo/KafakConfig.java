@@ -13,7 +13,7 @@ import java.util.Properties;
 @ComponentScan(basePackages = {"net.waldm.dev.kafka.demo"})
 public class KafakConfig {
 
-    public static final String TOPIC = "demo-topic";
+    public static final String TOPIC = "demo-topic-2";
 
     @Bean
     KafkaProducer<String, String> kafkaProducer() {
@@ -37,7 +37,7 @@ public class KafakConfig {
     private Properties consumerProperties() {
         Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9092");
-        props.put("group.id", "demo-group-"+System.currentTimeMillis());
+        props.put("group.id", "demo-group");
         props.put("key.deserializer", StringDeserializer.class.getName());
         props.put("value.deserializer", StringDeserializer.class.getName());
         return props;
