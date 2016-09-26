@@ -17,7 +17,9 @@ public class KafkaMain {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(KafakConfig.class);
         logger.info("Spring context initialized.");
 
-        KafkaRunner runner = (KafkaRunner) ctx.getBean("kafkaRunner");
+//        KafkaRunner runner = (KafkaRunner) ctx.getBean("kafkaRunner");
+//        RT911KafkaRunner runner = (RT911KafkaRunner) ctx.getBean("RT911KafkaRunner");
+        RT911KafkaPublisherRunner runner = (RT911KafkaPublisherRunner) ctx.getBean("RT911KafkaPublisherRunner");
         runner.runDemo();
     }
 }
