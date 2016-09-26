@@ -1,4 +1,4 @@
-package net.waldm.dev.kafka.demo;
+package com.objectpartners.kafka.demo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

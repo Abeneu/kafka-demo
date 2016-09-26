@@ -1,4 +1,4 @@
-package net.waldm.dev.kafka.demo;
+package com.objectpartners.kafka.demo;
 
 
 

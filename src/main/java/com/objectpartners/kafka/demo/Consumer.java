@@ -1,4 +1,4 @@
-package net.waldm.dev.kafka.demo;
+package com.objectpartners.kafka.demo;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;

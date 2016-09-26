@@ -1,4 +1,4 @@
-package net.waldm.dev.kafka.demo;
+package com.objectpartners.kafka.demo;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -19,7 +19,8 @@ class RT911Producer implements Runnable {
 
     private final static Logger logger = LoggerFactory.getLogger(RT911Producer.class);
 
-    private String dataFileName = "Seattle_Real_Time_Fire_911_Calls_10_Test.csv.gz";
+//    private String dataFileName = "Seattle_Real_Time_Fire_911_Calls_10_Test.csv.gz";
+    private String dataFileName = "Seattle_Real_Time_Fire_911_Calls_Chrono.csv.gz";
 
     @Autowired
     KafkaProducer<String, String> kafkaProducer;
@@ -37,14 +38,14 @@ class RT911Producer implements Runnable {
             String line;
             while((line = br.readLine()) != null) {
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     // continue
                 }
                 Date now = new Date();
                 String ts = now.toInstant().toString();
                 kafkaProducer.send(new ProducerRecord<>(KafakConfig.TOPIC, ts, line));
-                logger.debug("sent <" + ts + "," + line + "> to  topic " + KafakConfig.TOPIC);
+                logger.info("sent <" + ts + "," + line + "> to  topic " + KafakConfig.TOPIC);
 
             }
             logger.info("ALL INPUT PROCESSED");

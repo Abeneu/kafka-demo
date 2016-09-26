@@ -1,4 +1,4 @@
-package net.waldm.dev.kafka.demo;
+package com.objectpartners.kafka.demo;
 
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Properties;
 
 @Configuration
-@ComponentScan(basePackages = {"net.waldm.dev.kafka.demo"})
+@ComponentScan(basePackages = {"com.objectpartners.kafka.demo"})
 public class KafakConfig {
 
     public static final String TOPIC = "demo-topic-2";
