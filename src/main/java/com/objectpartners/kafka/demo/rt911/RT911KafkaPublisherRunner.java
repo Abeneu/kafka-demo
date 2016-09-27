@@ -1,5 +1,6 @@
-package com.objectpartners.kafka.demo;
+package com.objectpartners.kafka.demo.rt911;
 
+import com.objectpartners.kafka.demo.KafakConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

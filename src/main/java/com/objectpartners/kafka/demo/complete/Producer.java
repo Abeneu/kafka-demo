@@ -1,5 +1,6 @@
-package com.objectpartners.kafka.demo;
+package com.objectpartners.kafka.demo.complete;
 
+import com.objectpartners.kafka.demo.KafakConfig;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.slf4j.Logger;
@@ -8,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
-
 
 @Component
 class Producer implements Runnable {

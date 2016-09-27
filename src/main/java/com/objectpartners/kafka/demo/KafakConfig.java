@@ -13,7 +13,7 @@ import java.util.Properties;
 @ComponentScan(basePackages = {"com.objectpartners.kafka.demo"})
 public class KafakConfig {
 
-    public static final String TOPIC = "demo-topic-2";
+    public static final String TOPIC = "demo-topic";
 
     @Bean
     KafkaProducer<String, String> kafkaProducer() {

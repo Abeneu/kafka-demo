@@ -1,17 +1,18 @@
-package com.objectpartners.kafka.demo;
+package com.objectpartners.kafka.demo.complete;
 
+import com.objectpartners.kafka.demo.KafakConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RT911KafkaRunner {
+class KafkaRunner {
 
-    private final static Logger logger = LoggerFactory.getLogger(RT911KafkaRunner.class);
+    private final static Logger logger = LoggerFactory.getLogger(KafkaRunner.class);
 
     @Autowired
-    RT911Producer producer;
+    Producer producer;
 
     @Autowired
     Consumer consumer;
@@ -28,15 +29,15 @@ public class RT911KafkaRunner {
         producerThread.start();
 
         try {
-            producerThread.join();
-            logger.info("producer complete");
+            logger.info("sleep for 10 seconds so the producer and consumer can work....");
+            Thread.sleep(10000);
+            logger.info("sleep complete");
         } catch (InterruptedException e) {
             logger.info(e.getMessage());
         } finally {
             consumer.stop();
         }
-
-        logger.info("demo run completed");
+        logger.info("demo run completed\n");
     }
 
 }

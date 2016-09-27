@@ -1,5 +1,6 @@
-package com.objectpartners.kafka.demo;
+package com.objectpartners.kafka.demo.rt911;
 
+import com.objectpartners.kafka.demo.KafakConfig;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.slf4j.Logger;
@@ -12,7 +13,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Date;
 import java.util.zip.GZIPInputStream;
-
 
 @Component
 class RT911Producer implements Runnable {
