@@ -14,7 +14,7 @@ To run the 911 call producer, you must have:
 
 then, from a terminal
 
-$ java -jar kafka-demo-0.1-all.jar <path to gzip of 911 calls>
+$ java -jar kafka-demo-0.1-all.jar [path to gzip of 911 calls]
 
 if path is unspecified, the code will use the large chronological file located at:
 
