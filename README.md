@@ -9,8 +9,8 @@ $ gradle shadowJar
 
 To run the 911 call producer, you must have:
 
-1) Kafka (version 0.10.0.1) installed
-2) Started Kafka (see instructions at    )
+1. Kafka (version 0.10.0.1) installed
+2. Started Kafka (and Zookeeper)
 
 then, from a terminal
 
