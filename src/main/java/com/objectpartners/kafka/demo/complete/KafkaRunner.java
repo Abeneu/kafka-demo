@@ -1,6 +1,6 @@
 package com.objectpartners.kafka.demo.complete;
 
-import com.objectpartners.kafka.demo.KafakConfig;
+import com.objectpartners.kafka.demo.KafkaConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ class KafkaRunner {
 
     public void runDemo() {
         logger.info("this demo requires ZooKeeper and Kafka to be up and running " +
-                    "and the topic " + KafakConfig.TOPIC + " must be available");
+                    "and the topic " + KafkaConfig.TOPIC + " must be available");
 
         Thread producerThread = new Thread(producer);
         Thread consumerThread = new Thread(consumer);

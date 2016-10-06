@@ -2,24 +2,42 @@ buildscript {
     repositories {
         jcenter()
     }
+    dependencies {
+        classpath "com.github.jengelman.gradle.plugins:shadow:1.2.3"
+    }
 }
 
 apply plugin: 'idea'
-apply plugin: 'groovy'
-apply plugin: 'application'
-mainClassName = 'com.objectpartners.spark.rt911.standalone.MainApplication'
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 
 group = 'com.objectpartners'
 version = '0.1'
 
 description = """
-Spark Java Stand Alone Examples
 Project name: ${project.name}
  """
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Kafka Producer Client',
+                'Implementation-Version': version,
+                'Main-Class': 'com.objectpartners.kafka.demo.rt911.RT911KafkaMain'
+    }
+}
+
+shadowJar {
+    zip64 true
+    exclude "META-INF/*.SF"
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    exclude "LICENSE*"
+}
+
 
 repositories {
     jcenter()
@@ -41,7 +59,7 @@ dependencies {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.10'
+    gradleVersion = '3.1'
 }
 
 

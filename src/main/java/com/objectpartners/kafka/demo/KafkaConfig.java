@@ -11,9 +11,10 @@ import java.util.Properties;
 
 @Configuration
 @ComponentScan(basePackages = {"com.objectpartners.kafka.demo"})
-public class KafakConfig {
+public class KafkaConfig {
 
     public static final String TOPIC = "demo-topic";
+    public static final  String DATA_FILE = "Seattle_Real_Time_Fire_911_Calls_Chrono.csv.gz";
 
     @Bean
     KafkaProducer<String, String> kafkaProducer() {

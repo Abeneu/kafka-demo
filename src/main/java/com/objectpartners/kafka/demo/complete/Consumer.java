@@ -1,6 +1,6 @@
 package com.objectpartners.kafka.demo.complete;
 
-import com.objectpartners.kafka.demo.KafakConfig;
+import com.objectpartners.kafka.demo.KafkaConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -23,7 +23,7 @@ class Consumer implements Runnable {
 
     @Override
     public void run() {
-        kafkaConsumer.subscribe(Collections.singletonList(KafakConfig.TOPIC));
+        kafkaConsumer.subscribe(Collections.singletonList(KafkaConfig.TOPIC));
         running = true;
 
         try {

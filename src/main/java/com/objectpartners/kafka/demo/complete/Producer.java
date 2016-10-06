@@ -1,6 +1,6 @@
 package com.objectpartners.kafka.demo.complete;
 
-import com.objectpartners.kafka.demo.KafakConfig;
+import com.objectpartners.kafka.demo.KafkaConfig;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.slf4j.Logger;
@@ -28,8 +28,8 @@ class Producer implements Runnable {
             }
             Date now = new Date();
             String ts = now.toInstant().toString();
-            kafkaProducer.send(new ProducerRecord<>(KafakConfig.TOPIC, Integer.toString(i), ts));
-            logger.info("sent <" + i + "," + ts + "> to  topic " + KafakConfig.TOPIC);
+            kafkaProducer.send(new ProducerRecord<>(KafkaConfig.TOPIC, Integer.toString(i), ts));
+            logger.info("sent <" + i + "," + ts + "> to  topic " + KafkaConfig.TOPIC);
         }
         kafkaProducer.close();
     }

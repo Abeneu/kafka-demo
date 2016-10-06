@@ -1,7 +1,7 @@
 package com.objectpartners.kafka.demo.rt911;
 
 
-import com.objectpartners.kafka.demo.KafakConfig;
+import com.objectpartners.kafka.demo.KafkaConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -12,12 +12,16 @@ public class RT911KafkaMain {
     private final static Logger logger = LoggerFactory.getLogger(RT911KafkaMain.class);
 
     public static void main(String[] args) {
-        logger.info("Initializing Spring context.");
+        String dataFile = KafkaConfig.DATA_FILE;
+        if(args.length > 0) {
+            dataFile = args[0];
+            logger.info("Using " + args[0] + " as input data file");
+        }
 
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(KafakConfig.class);
-        logger.info("Spring context initialized.");
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(KafkaConfig.class);
 
         RT911KafkaPublisherRunner runner = (RT911KafkaPublisherRunner) ctx.getBean("RT911KafkaPublisherRunner");
+        runner.setDataFileName(dataFile);
         runner.runDemo();
     }
 }
